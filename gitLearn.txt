@@ -4,3 +4,65 @@ git 指令：
 2、$ git remote -v
 origin  git@github.com:TrentZxf/learnGit.git (fetch)
 origin  git@github.com:TrentZxf/learnGit.git (push)
+
+3、
+git add gitLearn.txt
+git commit -m "add gitLearn.txt"
+git push
+git push -u origin master第一次推送master分支的所有内容
+
+4、创建SSH Key：
+ssh-keygen -t rsa -C "youremail@example.com"
+
+5、
+git config --add user.email your@email
+git config --add user.name your_name
+
+
+创建git仓库：
+1. 在终端中用命令进入到你要上传的工程的根目录下，e.g. cd:/Documents/user/project
+
+2. 初始化一个本地git仓库(repository)：git init 
+
+3. 将目录下的所有文件加入到仓库：git add . (如果只想加入特定的一些文件，就把 . 换成文件名)
+
+4. 将文件commit到本地仓库：git commit -m "注释"
+
+5. 登录网页GitHub，并新建一个远程repository，例如
+
+6. 回到终端，敲入命令将本地repository和远程repository连接起来：
+
+git remote add origin https://github.com/ZhangYiMay/WeixinJumpIOS.git
+
+7. 如果你的远程repository里面还是空的，那么这一步跳过
+
+git pull origin master
+
+
+
+8. 敲入命令上传工程到远程repository：
+
+git push -u origin master
+
+
+这里有些注意事项是我自己在初学git的时候遇到的：
+
+修改本地git的用户名（user name）和邮箱（mail）：
+
+如果你不修改git本地的用户名和邮箱，它默认的是用电脑的用户名和邮箱，而上传到GitHub之后显示的上传人和邮箱是由本地的用户名和邮箱决定的，所以如果你用别人的电脑上传而不修改git本地用户名和邮箱，这样到时候网页显示工程的时候这个工程就显示成别人的名字了，解决这个的方法就是在终端通过命令来修改名字和邮箱：
+
+git config --global user.name "你的用户名"
+
+git config --global user.email “你的邮箱"
+
+
+
+可以用这个命令看看改成功没：
+
+git config --list
+
+仍然需要注意的是，如果一开始你已经用别人的用户名上传了工程，结果发现网页显示的上传人不对而回来修改的话，很可能你在进行了上述修改后上传人还是不会变，这时是需要重新commit到本地仓库的，你需要把之前init的仓库删除：
+
+rm -rf .git
+
+然后回到步骤1重新进行

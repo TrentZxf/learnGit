@@ -1,0 +1,6 @@
+git ÷∏¡Ó£∫
+1°¢git remote add origin git@github.com:TrentZxf/learnGit.git //sshµÿ÷∑
+
+2°¢$ git remote -v
+origin  git@github.com:TrentZxf/learnGit.git (fetch)
+origin  git@github.com:TrentZxf/learnGit.git (push)
